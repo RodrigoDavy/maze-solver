@@ -1,0 +1,9 @@
+#Create your own maze here using 1 for walls and 0 for clear paths
+
+0 1 0 1 0 0
+0 1 0 1 0 0
+0 1 0 0 0 0
+0 0 0 1 1 0
+1 1 1 1 0 0
+0 0 0 0 0 1
+0 0 0 0 0 0
