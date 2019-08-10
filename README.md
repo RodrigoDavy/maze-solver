@@ -1,5 +1,5 @@
 # maze-solver
-A simple program written in Ruby which indicates the path to the exit of a maze
+A simple program written in Ruby which indicates the path to the exit of a maze, if it exists
 
 The start point of the maze is the position in the top-left corner, the exit to the maze is the position in bottom-right corner
 
