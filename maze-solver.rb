@@ -104,7 +104,7 @@ print "------------------\n"
 print_maze(maze)
 
 if next_pos(pos,maze,visited)
-	print "/n¡Existe un camino hacia el fín de este laberinto!/n"
+	print "¡Existe un camino hacia el fín de este laberinto!\n\n"
 
 	print_maze(maze)
 else
