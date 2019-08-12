@@ -54,6 +54,8 @@ end
 
 def next_pos(pos,maze,visited)
 
+	return false unless can_move(pos,maze,visited)
+	
 	visited[pos[0]][pos[1]] = true
 
 	#Checks if position corresponds to the exit, which is the bottom right corner of the matrix
@@ -64,38 +66,30 @@ def next_pos(pos,maze,visited)
 	
 	new_pos = [pos[0]+1,pos[1]] #down
 
-	if(can_move(new_pos,maze,visited))
-		if next_pos(new_pos,maze,visited)
-			maze[pos[0]][pos[1]] = "."
-			return true 
-		end
+	if next_pos(new_pos,maze,visited)
+		maze[pos[0]][pos[1]] = "."
+		return true 
 	end
 	
 	new_pos = [pos[0],pos[1]+1] #right
 
-	if(can_move(new_pos,maze,visited))
-		if next_pos(new_pos,maze,visited)
-			maze[pos[0]][pos[1]] = "."
-			return true 
-		end
+	if next_pos(new_pos,maze,visited)
+		maze[pos[0]][pos[1]] = "."
+		return true 
 	end
 
 	new_pos = [pos[0],pos[1]-1] #left
 
-	if(can_move(new_pos,maze,visited))
-		if next_pos(new_pos,maze,visited)
-			maze[pos[0]][pos[1]] = "."
-			return true 
-		end
+	if next_pos(new_pos,maze,visited)
+		maze[pos[0]][pos[1]] = "."
+		return true 
 	end
 
 	new_pos = [pos[0]-1,pos[1]] #up
 
-	if(can_move(new_pos,maze,visited))
-		if next_pos(new_pos,maze,visited)
-			maze[pos[0]][pos[1]] = "."
-			return true 
-		end
+	if next_pos(new_pos,maze,visited)
+		maze[pos[0]][pos[1]] = "."
+		return true 
 	end
 end
 
@@ -110,11 +104,9 @@ print "------------------\n"
 print_maze(maze)
 
 if next_pos(pos,maze,visited)
-	puts "¡Existe un camino hacia el fín de este laberinto!"
+	print "/n¡Existe un camino hacia el fín de este laberinto!/n"
+
+	print_maze(maze)
 else
 	puts "No existe un camino hacia el fín de este laberinto."
 end
-
-puts ""
-
-print_maze(maze)
